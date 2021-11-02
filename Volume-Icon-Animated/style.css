@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.d-flex {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+}
+
+.rec {
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  background-color: #473bf0;
+  position: relative;
+  border-radius: 10px 0 0 10px;
+}
+.rec:after {
+  content: "";
+  top: -110%;
+  right: -80%;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 80px solid transparent;
+  border-left: 0;
+  border-right: 100px solid #473bf0;
+}
+.right {
+  margin: 0 0 0 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.right > span {
+  display: inline-block;
+  border-top: 6.5px solid transparent;
+  border-right: 6.5px solid #473bf0;
+  border-bottom: 6.5px solid #473bf0;
+  border-left: 6.5px solid transparent;
+  transform: rotate(-45deg);
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  animation: none;
+}
+.right > span:first-child {
+  animation-delay: 0.5s;
+  right: -71px;
+  height: 90px;
+  width: 90px;
+}
+.right > span:nth-child(2) {
+  animation-delay: 0.6s;
+  right: -86px;
+  height: 120px;
+  width: 120px;
+}
+.right > span:last-child {
+  animation-delay: 0.7s;
+  right: -100px;
+  height: 149px;
+  width: 149px;
+}
+.left:hover + .right span {
+  animation-name: animer;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes animer {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
